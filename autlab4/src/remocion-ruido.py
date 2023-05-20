@@ -1,6 +1,6 @@
 # Import PCL module
 # -*- coding: utf-8 -*-
-
+import os
 import pcl
 
 # Load Point Cloud file
@@ -26,3 +26,5 @@ outlier_filter.set_std_dev_mul_thresh(x)
 # Aplicar el filtro
 cloud_filtered = outlier_filter.filter()
 
+filename = os.path.join(os.path.dirname(__file__), '../data/escena2_filtered.pcd')
+pcl.save(cloud_filtered, filename)
