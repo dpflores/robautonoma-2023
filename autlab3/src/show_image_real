@@ -27,7 +27,7 @@ if __name__ == '__main__':
   rospy.init_node('camera_node')
 
   # Objeto que se suscribe al tópico de la cámara
-  topic_name = "/camera/rgb/image_raw"
+  topic_name = "/usb_cam/image_raw"
   cam = Cam(topic_name)
 
   # Tópico para publicar una imagen de salida
