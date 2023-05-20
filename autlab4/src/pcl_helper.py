@@ -43,7 +43,7 @@ def pcl2ros(pcl_array):
     """
     ros_msg = PointCloud2()
     ros_msg.header.stamp = rospy.Time.now()
-    ros_msg.header.frame_id = "world"
+    ros_msg.header.frame_id = "camera_depth_optical_frame"
     ros_msg.height = 1
     ros_msg.width = pcl_array.size
     ros_msg.fields.append(PointField(

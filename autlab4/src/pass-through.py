@@ -21,5 +21,5 @@ cloud_filtered = passthrough.filter()
 
 # Grabar el resultado en disco
 
-filename = os.path.join(os.path.dirname(__file__), '../data/mesa_filtered.pcd')
+filename = os.path.join(os.path.dirname(__file__), '../data/mesa_pass_through.pcd')
 pcl.save(cloud_filtered, filename)

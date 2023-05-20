@@ -4,7 +4,7 @@ import pcl
 import os
 
 # Cargar la nube de puntos
-cloud = pcl.load_XYZRGB(os.path.join(os.path.dirname(__file__), '../data/mesa_filtered.pcd'))
+cloud = pcl.load_XYZRGB(os.path.join(os.path.dirname(__file__), '../data/mesa_pass_through.pcd'))
 
 # Crear el objeto para la segmentación
 seg = cloud.make_segmenter()
