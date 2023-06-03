@@ -1,0 +1,6 @@
+<launch>
+
+  
+  <node pkg="tf" type="static_transform_publisher" name="goal_broadcaster" args="0.5 2 0 0.01 0 0 map nav_goal2 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="goal_broadcaster2" args="1.5 3 0 0.01 0 0 map nav_goal 100"/>
+</launch>
