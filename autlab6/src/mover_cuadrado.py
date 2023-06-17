@@ -11,7 +11,7 @@ WAFFLE_MAX_ANG_VEL = 1.82
 
 
 def constrain(input, low, high):
-    if input < low:
+    if input    < low:
       input = low
     elif input > high:
       input = high
