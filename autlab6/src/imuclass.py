@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist
 class SuscriptorImu(object):
     def __init__(self):
         topic = '/imu'
-        self.pub = rospy.Subscriber(topic, Imu, self.callback)
+        self.sub = rospy.Subscriber(topic, Imu, self.callback)
         self.linear_vel = [0.0, 0.0]
         self.imu = Imu()
         

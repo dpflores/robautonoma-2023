@@ -24,14 +24,14 @@ if __name__ == "__main__":
                   [0, 0, 0, 0, 0, 0, 1, dt],
                   [0, 0, 0, 0, 0, 0, 0, 1]])
     Gk = np.array([[0]]).T
-    Q = 1*np.eye(8)
+    Q = 10*np.eye(8)
 
 
     Hk = np.array([[0, 0, 0, 0, 1, 0, 0, 0],
                   [0, 0, 0, 0, 0, 1, 0, 0],
                   [0, 0, 0, 0, 0, 0, 0, 1]])
     
-    R = 0.1*np.eye(3)
+    R = 10*np.eye(3)
     
     kalman = LinearFilter(x0,y0,u0,P0)
     imu = SuscriptorImu()
@@ -45,10 +45,10 @@ if __name__ == "__main__":
 
         kalman.prediction_step(Fk,Gk,Q)
         kalman.yk = imu.get_value_inertial_k()
-        #print(kalman.yk)
+        print(kalman.yk)
         kalman.correction_step(Hk,R)
 
-        print(kalman.xk)
+        #print(kalman.xk)
 
         x = kalman.xk[0]
         y = kalman.xk[1]
