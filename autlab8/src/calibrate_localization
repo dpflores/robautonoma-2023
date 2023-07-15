@@ -45,18 +45,24 @@ if __name__=="__main__":
     counter = 0
 
     linear_speed = 0.1
-    angular_turn = 0.16
+    angular_turn = 1.5
+
+    print("w: Girar\n")
+    print("s: detenerse\n")
+    print("x: salir\n")
     while not rospy.is_shutdown():
         
-        if counter == 00:
+        command = input()
+        if command == "w":
             twist.linear.x = checkLinearLimitVelocity(0); twist.linear.y = 0.0; twist.linear.z = 0.0
             twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = checkLinearLimitVelocity(angular_turn)
         
        
-        if counter == 800:
+        if command == "s":
             twist.linear.x = 0; twist.linear.y = 0.0; twist.linear.z = 0.0
             twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = 0
-
+        if command == "x":
+           break
         pub.publish(twist)        
 
         counter += 1
